@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 ####################### DEFINING TRAJECTORIES, ATOMGROUPS, REFERENCE STRUCTURES ETC ###################################
 
-BlaC = mda.Universe("BlaC_Analysis/BlaC_dry.pdb","BlaC_Analysis/BlaC.dcd") #This step took a while in deciding which file types to use - MDAnalysis supports multiple file types but different file types are better suited to different analyses (e.g. .dcd file types can't seem to be read by MDAnalysis for charge types and thus can't be used for Hydrogen Bond analysis). Initially I tried to use a multi-structure PDB format for the trajectory, but running the code seemed to bring up a lot of errors - potentially this could have been due to two PDB file formats used. An NC file type for the trajectory also didn't seem to function properly in the code, so I settled for fa DCD file format.
+BlaC = mda.Universe("BlaC_Structure.pdb","BlaC.dcd") #This step took a while in deciding which file types to use - MDAnalysis supports multiple file types but different file types are better suited to different analyses (e.g. .dcd file types can't seem to be read by MDAnalysis for charge types and thus can't be used for Hydrogen Bond analysis). Initially I tried to use a multi-structure PDB format for the trajectory, but running the code seemed to bring up a lot of errors - potentially this could have been due to two PDB file formats used. An NC file type for the trajectory also didn't seem to function properly in the code, so I settled for fa DCD file format.
 
 protein= BlaC.select_atoms("protein")
 
